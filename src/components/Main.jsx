@@ -8,12 +8,8 @@ const Main = function ({ name, handleRegister, handleLogin }) {
 
   return (
     <main className="main">
-      {name === 'main' ?
-        <HomePage />
-        :
-        name === 'signup' ?
-          <Register name={name} handleRegister={handleRegister} />
-          :
+      {name === 'main' ? <HomePage /> :
+        name === 'signup' ? <Register name={name} handleRegister={handleRegister} /> :
           <Login name={name} handleLogin={handleLogin} />
       }
     </main>

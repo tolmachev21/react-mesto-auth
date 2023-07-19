@@ -17,18 +17,17 @@ function App() {
 
     // Стейты контекста
     const [currentUser, setCurrentUser] = useState({});
-
-    // Стейт карточек
+    // const [userEmail, setUserEmail] = useState('');
+    // Стейты карточек
     const [cards, setCards] = useState([]);
     const [deleteCardId, setDeleteCardId] = useState('');
-
-
     // Стейты попапов
     const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
     const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
     const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
     const [isImagePopupOpen, setImagePopupOpen] = useState(false);
     const [isDeletePopupOpen, setDeletePopupOpen] = useState(false);
+    // const [isResultPopupOpen, setResultPopupOpen] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
 
     function handleEditAvatarClick() {
@@ -161,14 +160,14 @@ function App() {
                         />} />
                     <Route path='/sing-in' element={
                         <>
-                            <Header name='signup' />
-                            <Main name='signup' />
+                            <Header name='signin' />
+                            <Main name='signin' isCheckToken={isCheckToken} handleLogin={handleLogin} />
                         </>
                     } />
                     <Route path='/sing-up' element={
                         <>
-                            <Header name='singin' />
-                            <Main name='signin' />
+                            <Header name='singup' />
+                            <Main name='signup' isCheckToken={isCheckToken} handleLogin={handleLogin} />
                         </>
                     } />
                     <Route path='*' element={<Navigate to='/' replace />} />

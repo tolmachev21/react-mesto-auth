@@ -8,7 +8,7 @@ function SectionLogin({ name, children, onSubmit }) {
         {children}
         <button className="login__submit-button" type="submit">{name === 'signup' ? 'Регистрация' : 'Войти'}</button>
       </form>
-      {name === 'signup' && <p className="login__subtitle">Уже зарегистрированы? <Link to='/sign-in' className="login__subtitle-link">Войти</Link></p>}
+      {name === 'signup' ? <p className="login__subtitle">Уже зарегистрированы? <Link to='/sign-in' className="login__subtitle_type_link">Войти</Link></p> : <p className="login__subtitle"></p>}      
     </section>
   );
 };

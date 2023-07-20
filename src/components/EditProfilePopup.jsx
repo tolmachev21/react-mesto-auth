@@ -6,7 +6,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
 
   const currentUser = useContext(CurrentUserContext);
-  const [name, setName] = useState('');
+  const [name, setName] = useState('dsf');
   const [description, setDescription] = useState('');
 
   function handleChangeName(evt) {
@@ -30,7 +30,6 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
       job: description,
     });
   };
-
 
   return (
     <PopupWithForm

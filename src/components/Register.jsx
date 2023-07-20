@@ -2,7 +2,7 @@ import SectionLogin from "./SectionLogin";
 import { useState } from "react";
 
 
-function Register ({ name, handleRegister}) {
+function Register({ name, handleRegister }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,19 +17,24 @@ function Register ({ name, handleRegister}) {
 
   function onRegister(event) {
     event.preventDefault();
-    handleRegister()
+    handleRegister({
+      password: password,
+      email: email,
+    });
   };
-  
-  return(
+
+  return (
     <SectionLogin name={name} onSubmit={onRegister}>
-    <input 
+      <input
+        className="login__input"
         name="email"
         type="email"
         placeholder="Email"
         value={email}
         onChange={handleChangeEmail}
-      ></input> 
-      <input 
+      ></input>
+      <input
+        className="login__input"
         name="password"
         type="password"
         placeholder="Пароль"

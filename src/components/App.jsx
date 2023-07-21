@@ -159,7 +159,7 @@ function App() {
                 setSuccessful(false)
                 console.error(`Ошибка при регистрации ${err}`)
             })
-            .finally(setResultPopupOpen(true))
+            .finally(() => { setResultPopupOpen(true) })
     };
 
     return (
@@ -197,7 +197,7 @@ function App() {
                             <Register name='signup' handleRegister={handleRegister} />
                         </>
                     } />
-                    
+
                     <Route path='*' element={<Navigate to='/' replace />} />
                 </Routes>
 

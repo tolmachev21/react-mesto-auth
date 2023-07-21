@@ -1,19 +1,9 @@
 import { Navigate } from 'react-router-dom';
-import Main from './Main';
-import Header from './Header';
 
-function ProtectedRoute({ loggedIn, userEmail, ...props }) {
+function ProtectedRoute({ element: Component, loggedIn, ...props }) {
 
   return (
-    loggedIn ?
-      <>
-        <Header dataUser={userEmail} />
-        <Main
-          name='main'
-          {...props}
-        />
-      </>
-      : <Navigate to={'/sign-in'} replace />
+    loggedIn ? <Component {...props} /> : <Navigate to={'/sign-in'} replace />
   );
 };
 

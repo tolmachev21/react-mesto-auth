@@ -1,8 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
 import CurrentUserContext from '../contexts/CurrentUserContext.js';
-import Register from './Register.jsx';
-import Login from './Login.jsx';
 import Card from './Card.jsx'
 
 const Main = function (props) {
@@ -12,7 +10,6 @@ const Main = function (props) {
 
   return (
     <main className="main">
-      {props.name === 'main' ? <>
         <section className="profile">
           <button className="profile__avatar-button" onClick={props.onEditAvatar} type="button">
             <img className="profile__avatar" src={currentUser.avatar ? currentUser.avatar : '#'} alt="Аватар профиля"></img>
@@ -32,10 +29,6 @@ const Main = function (props) {
             )
           })}
         </section>
-      </> :
-        props.name === 'signup' ? <Register name={props.name} handleRegister={props.handleRegister} /> :
-          <Login name={props.name} handleLogin={props.handleLogin} />
-      }
     </main>
   );
 };
